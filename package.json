@@ -1,0 +1,31 @@
+{
+  "name": "nuxt3-db",
+  "description": "Local DataBase Module for Nuxt3 ( Indexed DB )",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/Ghanavati7915",
+  "repository": {
+    "url" : "https://github.com/Ghanavati7915/nuxt3-db"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "ghanavati",
+    "iran",
+    "cap",
+    "nuxt",
+    "nuxt3",
+    "nuxt3-db",
+    "indexedDB",
+    "db"
+  ],
+  "author": "Ahmad Ghanavati",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}
