@@ -2,16 +2,9 @@
   "name": "nuxt3-db",
   "description": "Local DataBase Module for Nuxt3 ( Indexed DB )",
   "version": "0.0.1",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "homepage": "https://github.com/Ghanavati7915",
-  "repository": {
-    "url" : "https://github.com/Ghanavati7915/nuxt3-db"
-  },
-  "scripts": {
-    "build": "tsup"
-  },
+  "repository": "https://github.com/Ghanavati7915/nuxt3-db",
+  "license": "MIT",
   "keywords": [
     "ghanavati",
     "iran",
@@ -23,9 +16,45 @@
     "db"
   ],
   "author": "Ahmad Ghanavati",
-  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.11.2"
+  },
   "devDependencies": {
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5"
+    "@nuxt/devtools": "^1.2.0",
+    "@nuxt/eslint-config": "^0.3.10",
+    "@nuxt/module-builder": "^0.6.0",
+    "@nuxt/schema": "^3.11.2",
+    "@nuxt/test-utils": "^3.12.1",
+    "@types/node": "^20.12.11",
+    "changelogen": "^0.5.5",
+    "eslint": "^9.2.0",
+    "nuxt": "^3.11.2",
+    "typescript": "latest",
+    "vitest": "^1.6.0",
+    "vue-tsc": "^2.0.16"
   }
 }
