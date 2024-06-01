@@ -1,7 +1,7 @@
 {
   "name": "nuxt3-db",
   "description": "Local DataBase Module for Nuxt3 ( Indexed DB )",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/Ghanavati7915",
   "repository": "https://github.com/Ghanavati7915/nuxt3-db",
   "license": "MIT",
